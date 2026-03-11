@@ -6,16 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Praktikum Minggu 3 - Layout</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body>
-    <!-- Konten akan kita tambahkan di sini -->
-  </body>
+
   <body>
     <!-- ── NAVBAR ─────────────────────── -->
     <nav class="navbar">
       <div class="navbar__logo">
         <span class="logo-icon">&#9670;</span>
-        <span class="logo-text">SASKIA</span>
+        <span class="logo-text">Sdpstudio</span>
       </div>
 
       <ul class="navbar__links">
@@ -53,7 +55,7 @@
     <section id="about">
       <div class="about_container">
         <div class="about_image">
-          <img src="assets/images/adalah.jpg" alt="Foto Saya" />
+          <img src="assets/images/saskiaap.jpg" alt="Foto Saya" />
         </div>
 
         <div class="about_text">
@@ -80,15 +82,21 @@
             </li>
 
             <li>
-              <strong>2021 - 2023/2024</strong>
+              <strong>2021 - 2024</strong>
               <br />
               SMK Swasta Bintang Langkat
             </li>
 
             <li>
-              <strong>2019 - 2021</strong>
+              <strong>2018 - 2021</strong>
               <br />
               SMP Negeri 1 Darul Makmur
+            </li>
+
+            <li>
+              <strong>2012 - 2018</strong>
+              <br />
+              SD Negeri 1 Pulo Teungoh
             </li>
           </ul>
         </div>
@@ -147,17 +155,18 @@
           <img src="assets/images/database.jpg" alt="Project 1" />
           <h3>Sistem Database Klinik</h3>
           <p>
-            Merancang dan mengelola database klinik menggunakan MariaDB untuk menyimpan dan
-            mengorganisir data dokter, pasien, serta kunjungan pasien.
+            Merancang dan mengelola database klinik menggunakan MySQL untuk menyimpan, mengelola,
+            dan mengorganisir data dokter, pasien, serta riwayat kunjungan pasien secara
+            terstruktur.
           </p>
         </div>
 
         <div class="portfolio_card">
-          <img src="assets/images/logsederhana.jpg" alt="Project 2" />
+          <img src="assets/images/appsaskia.jpg" alt="Project 2" />
           <h3>Aplikasi Login GUI Python</h3>
           <p>
-            Mengembangkan aplikasi login sederhana berbasis GUI menggunakan Python Tkinter yang
-            dilengkapi dengan form input username dan password.
+            Merancang aplikasi registrasi dan login berbasis Java Swing yang terhubung dengan
+            database MySQL untuk mengelola data pengguna.
           </p>
         </div>
       </div>
@@ -197,7 +206,7 @@
       <div class="container">
         <div class="footer__inner">
           <span class="footer__brand">&#9670; SASKIA</span>
-          <p class="footer__copy">&copy; 2026 Saskia. Dibuat dengan HTML & CSS murni.</p>
+          <p class="footer__copy">&copy; 2026 Sdpstudio. Dibuat dengan HTML & CSS murni.</p>
           <div class="footer__links">
             <a href="#home">Home</a>
             <a href="#about">About</a>
@@ -206,5 +215,24 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      // Fungsi untuk mendeteksi scroll dan memunculkan elemen
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      // Daftarkan semua section untuk diawasi
+      document.querySelectorAll('section').forEach((section) => {
+        observer.observe(section);
+      });
+    </script>
   </body>
 </html>
