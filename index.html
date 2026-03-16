@@ -26,7 +26,7 @@
         <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#contact">kontak</a></li>
       </ul>
-
+      <button id="dark-toggle" class="dark-btn">🌙 Dark Mode</button>
       <div class="navbar__cta">
         <a href="#" class="btn-primary">Hire Me</a>
       </div>
@@ -102,6 +102,16 @@
         </div>
       </div>
     </section>
+    <section class="counter-section">
+      <h2>Berapa Kali Kamu Minum Air Hari Ini?</h2>
+      <div class="counter-container">
+        <button id="btn-kurang" class="counter-btn">−</button>
+        <span id="angka-counter">0</span>
+        <button id="btn-tambah" class="counter-btn">+</button>
+      </div>
+      <p id="counter-pesan">Yuk mulai minum air!</p>
+    </section>
+
     <!-- ── SKILLS SECTION ──────────────── -->
     <section class="skills" id="about">
       <div class="container">
@@ -176,6 +186,7 @@
         “Setiap proses belajar adalah langkah menuju masa depan yang lebih baik.”
       </p>
     </section>
+
     <section id="contact">
       <h2>Hubungi Saya</h2>
       <p class="contact_desc">
@@ -191,16 +202,19 @@
           <p>📍 Lokasi: Medan, Indonesia</p>
         </div>
 
-        <div class="contact_form">
-          <form>
-            <input type="text" placeholder="Nama Anda" required />
-            <input type="email" placeholder="Email Anda" required />
-            <textarea placeholder="Tulis pesan Anda..." rows="5"></textarea>
-            <button type="submit">Kirim Pesan</button>
-          </form>
-        </div>
+        <section class="form-section">
+          <h2>Hubungi Kami</h2>
+          <div class="form-container">
+            <input type="text" id="input-nama" placeholder="Nama lengkap" />
+            <input type="email" id="input-email" placeholder="Alamat email" />
+            <textarea id="input-pesan" placeholder="Pesan kamu..." rows="4"></textarea>
+            <button id="btn-kirim">Kirim Pesan</button>
+            <div id="form-feedback" class="feedback hidden"></div>
+          </div>
+        </section>
       </div>
     </section>
+
     <!-- ── FOOTER ──────────────────────── -->
     <footer class="footer">
       <div class="container">
@@ -216,23 +230,6 @@
       </div>
     </footer>
 
-    <script>
-      // Fungsi untuk mendeteksi scroll dan memunculkan elemen
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
-            }
-          });
-        },
-        { threshold: 0.1 }
-      );
-
-      // Daftarkan semua section untuk diawasi
-      document.querySelectorAll('section').forEach((section) => {
-        observer.observe(section);
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
